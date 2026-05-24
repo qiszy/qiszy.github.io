@@ -20,6 +20,26 @@ const app = Vue.createApp({
         this.render();
     },
     methods: {
+        async copyText(text) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    const input = document.createElement("textarea");
+                    input.value = text;
+                    input.setAttribute("readonly", "");
+                    input.style.position = "absolute";
+                    input.style.left = "-9999px";
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(input);
+                }
+                window.alert("邮箱已复制");
+            } catch (error) {
+                window.alert("复制失败，请手动复制：" + text);
+            }
+        },
         render() {
             for (let i of this.renderers) i();
         },
