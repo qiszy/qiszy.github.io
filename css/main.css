@@ -482,6 +482,24 @@
     flex-direction: column;
     gap: 28px;
 }
+#links-snow-layer {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: fixed;
+    z-index: 3;
+}
+.links-snowflake {
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    top: -60px;
+    transition-property: transform, opacity;
+    transition-timing-function: linear;
+    user-select: none;
+    will-change: transform, opacity;
+}
 .links-banner {
     background: linear-gradient(135deg, #7fb7ff 0%, #7d95ff 45%, #8f7dff 100%);
     border-radius: 24px;
