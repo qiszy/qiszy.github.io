@@ -487,13 +487,15 @@
     overflow: hidden;
     pointer-events: none;
     position: fixed;
-    z-index: 3;
+    z-index: 1003;
 }
 .links-snowflake {
     left: 0;
     line-height: 1;
     position: absolute;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 22px rgba(140, 210, 255, 0.75);
     top: -60px;
     transition-property: transform, opacity;
     transition-timing-function: linear;

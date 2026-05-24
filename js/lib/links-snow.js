@@ -1,12 +1,12 @@
 (() => {
     const defaults = {
         enable: true,
-        minSize: 8,
-        maxSize: 24,
-        spawnInterval: 260,
-        minSpeed: 45,
-        maxSpeed: 110,
-        color: "#ffffff",
+        minSize: 14,
+        maxSize: 32,
+        spawnInterval: 140,
+        minSpeed: 22,
+        maxSpeed: 50,
+        color: "#dff6ff",
     };
 
     const config = Object.assign({}, defaults, window.particlexLinksSnow || {});
