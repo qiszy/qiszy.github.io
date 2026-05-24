@@ -8,6 +8,13 @@ const app = Vue.createApp({
             menuColor: false,
             scrollTop: 0,
             renderers: [],
+            originalTitle: "",
+            titleTimer: null,
+            toastTimer: null,
+            toast: {
+                show: false,
+                text: "",
+            },
         };
     },
     created() {
@@ -16,8 +23,20 @@ const app = Vue.createApp({
         });
     },
     mounted() {
+        this.originalTitle = document.title;
         window.addEventListener("scroll", this.handleScroll, true);
+        window.addEventListener("focus", this.handleWindowFocus);
+        window.addEventListener("blur", this.handleWindowBlur);
         this.render();
+    },
+    beforeUnmount() {
+        window.removeEventListener("scroll", this.handleScroll, true);
+        window.removeEventListener("focus", this.handleWindowFocus);
+        window.removeEventListener("blur", this.handleWindowBlur);
+        this.hideToast();
+        if (this.titleTimer) {
+            window.clearTimeout(this.titleTimer);
+        }
     },
     methods: {
         async copyText(text) {
@@ -35,10 +54,49 @@ const app = Vue.createApp({
                     document.execCommand("copy");
                     document.body.removeChild(input);
                 }
-                window.alert("邮箱已复制");
+                this.showToast("邮箱已复制");
             } catch (error) {
-                window.alert("复制失败，请手动复制：" + text);
+                this.showToast("复制失败，请手动复制：" + text, 3200);
             }
+        },
+        showToast(text, duration = 2200) {
+            if (this.toastTimer) {
+                window.clearTimeout(this.toastTimer);
+            }
+            this.toast.text = text;
+            this.toast.show = true;
+            this.toastTimer = window.setTimeout(() => {
+                this.toast.show = false;
+                this.toastTimer = null;
+            }, duration);
+        },
+        hideToast() {
+            if (this.toastTimer) {
+                window.clearTimeout(this.toastTimer);
+                this.toastTimer = null;
+            }
+            this.toast.show = false;
+        },
+        setPageTitle(text, duration = 0) {
+            if (this.titleTimer) {
+                window.clearTimeout(this.titleTimer);
+                this.titleTimer = null;
+            }
+            document.title = text;
+            if (duration > 0) {
+                this.titleTimer = window.setTimeout(() => {
+                    document.title = this.originalTitle;
+                    this.titleTimer = null;
+                }, duration);
+            }
+        },
+        handleWindowFocus() {
+            this.showToast("哈喽");
+            this.setPageTitle("哈喽", 1800);
+        },
+        handleWindowBlur() {
+            this.showToast("加纳~");
+            this.setPageTitle("加纳~");
         },
         render() {
             for (let i of this.renderers) i();
