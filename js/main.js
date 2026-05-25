@@ -90,7 +90,7 @@ const app = Vue.createApp({
             }
         },
         handleWindowFocus() {
-            this.setPageTitle("哈喽", 1800);
+            this.setPageTitle("哈喽哈喽(๑•̀ㅂ•́)و", 1800);
         },
         handleWindowBlur() {
             this.setPageTitle("加纳~");
@@ -115,4 +115,5 @@ const app = Vue.createApp({
         },
     },
 });
+
 app.mount("#layout");
