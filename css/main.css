@@ -504,31 +504,28 @@
 }
 .links-grid {
     display: grid;
-    gap: 20px;
+    gap: 26px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.links-grid-single {
-    grid-template-columns: minmax(0, 860px);
-    justify-content: start;
 }
 .link-card {
     align-items: center;
     background: #fff;
     border: 1px solid #edf3ff;
-    border-radius: 22px;
+    border-radius: 26px;
     box-shadow: 0 12px 35px #d9d9d960;
     color: #22313a !important;
     display: flex;
     gap: 18px;
-    min-height: 126px;
+    min-height: 156px;
     overflow: hidden;
-    padding: 22px;
+    padding: 24px 26px;
     transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    width: 100%;
 }
 .link-card-compact {
-    gap: 16px;
-    min-height: 112px;
-    padding: 18px 20px;
+    gap: 18px;
+    min-height: 156px;
+    padding: 24px 26px;
 }
 .link-card:hover {
     border-color: #9abbf7;
@@ -537,10 +534,10 @@
 }
 .link-card-avatar,
 .link-card-icon {
-    border-radius: 22px;
+    border-radius: 20px;
     flex-shrink: 0;
-    height: 76px;
-    width: 76px;
+    height: 84px;
+    width: 84px;
 }
 .link-card-avatar {
     box-shadow: 0 8px 18px #b9c3d84d;
@@ -548,9 +545,9 @@
 }
 .link-card-compact .link-card-avatar,
 .link-card-compact .link-card-icon {
-    border-radius: 18px;
-    height: 64px;
-    width: 64px;
+    border-radius: 20px;
+    height: 84px;
+    width: 84px;
 }
 .link-card-icon {
     align-items: center;
@@ -562,29 +559,31 @@
 }
 .link-card-body {
     min-width: 0;
+    width: 100%;
 }
 .link-card-body h3 {
     color: #22313a;
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .link-card-compact .link-card-body h3 {
     font-size: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 .link-card-body p {
     color: #5c6b72;
-    line-height: 1.8;
+    line-height: 1.75;
     margin-bottom: 10px;
 }
 .link-card-compact .link-card-body p {
-    font-size: 15px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 .link-card-body span {
     color: #7f8e99;
     display: inline-block;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 0.03em;
 }
 .article .info .date {
@@ -1133,8 +1132,7 @@ ol li {
     #menu #mobile-menu {
         display: block;
     }
-    .links-grid,
-    .links-grid-single {
+    .links-grid {
         grid-template-columns: 1fr;
     }
     .link-card {
