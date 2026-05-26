@@ -151,21 +151,77 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            
+<div id="archives" class="tags-page">
+    <div class="tag-page-hero">
+        <div class="tag-page-copy">
+            <h2>标签索引</h2>
+            <p>
+                
+                目前共有 1 个标签，便于把不同主题的内容串起来。
+                
+            </p>
+        </div>
         
+    </div>
+
+    <div class="tag-cloud-grid">
         
-        
-        <span>
-            <a href="/tags/web%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
+        <a
+            class="tag-cloud-card "
+            href="/tags/GitHub-Pages/"
+        >
+            <div class="tag-cloud-card-head">
+                <span class="tag-cloud-icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
-                web安全
-            </a>
-        </span>
+                <strong>GitHub Pages</strong>
+            </div>
+            <small>1 篇文章</small>
+        </a>
         
+    </div>
+
+    <div class="tag-page-section-head">
+        <div>
+            <h3>最新标签文章</h3>
+            <p>
+                
+                这里展示最近更新且已经打上标签的文章。
+                
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="tag-related-grid">
+        
+        
+        <a class="tag-related-card" href="/2026/05/23/hello-world/">
+            <img class="tag-related-cover" src="/images/banner.png" alt="第一篇文章" />
+            <div class="tag-related-body">
+                <div class="tag-related-meta">
+                    <span class="date">
+                        <i class="fa-solid fa-calendar fa-fw"></i>
+                        2026-05-23
+                    </span>
+                    
+                    <span class="category">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                        web安全
+                    </span>
+                    
+                </div>
+                <h3>第一篇文章</h3>
+                <p>这里是我的个人博客，主要记录学习、折腾和喜欢的内容。 常用命令 新建文章 hexo new &#34;文章标题&#34; 本地预览 hexo server 生成静态页面 hexo generate 部署到 GitHu...</p>
+                
+                <span class="tag-page-inline">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                    GitHub Pages
+                </span>
+                
+            </div>
+        </a>
         
     </div>
     
