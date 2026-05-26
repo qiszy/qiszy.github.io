@@ -1049,6 +1049,9 @@
 }
 #menu {
     background: #92cafa;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 -1px 10px 0 #9e9e9e4d;
     font-weight: bold;
     line-height: 50px;
@@ -1059,18 +1062,56 @@
     z-index: 1004;
 }
 #menu #desktop-menu {
+    align-items: center;
+    display: flex;
+    gap: 8px;
     height: 50px;
 }
 #menu #desktop-menu .title {
     color: #555;
-    display: inline-block;
+    align-items: center;
+    border-radius: 999px;
+    display: inline-flex;
+    gap: 6px;
+    height: 38px;
+    line-height: 1;
     margin-left: 60px;
     margin-right: 5px;
+    padding: 0 14px;
+    transition: background 0.28s ease, box-shadow 0.28s ease, color 0.28s ease, transform 0.28s ease;
 }
 #menu #desktop-menu a {
     color: #555;
-    display: inline-block;
-    margin-left: 30px;
+    align-items: center;
+    border-radius: 999px;
+    display: inline-flex;
+    gap: 4px;
+    height: 38px;
+    line-height: 1;
+    margin-left: 0;
+    padding: 0 14px;
+    transition: background 0.28s ease, box-shadow 0.28s ease, color 0.28s ease, transform 0.28s ease;
+}
+#menu #desktop-menu a i,
+#menu #desktop-menu a span,
+#menu #desktop-menu .title span {
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+#menu #desktop-menu a:hover,
+#menu #desktop-menu .title:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        0 10px 24px rgba(129, 164, 210, 0.16);
+    opacity: 1;
+    transform: translateY(-1px);
+}
+#menu #desktop-menu a:hover i,
+#menu #desktop-menu .title:hover span {
+    transform: translateY(-1px);
+}
+#menu #desktop-menu a:hover span {
+    transform: translateX(1px);
 }
 #menu #mobile-menu {
     min-height: 50px;
@@ -1088,12 +1129,18 @@
     width: 80%;
 }
 #menu #mobile-menu .items a {
+    border-radius: 18px;
     color: #555;
+    transition: background 0.28s ease, transform 0.28s ease;
 }
 #menu #mobile-menu .title {
     color: #555;
     cursor: pointer;
     z-index: 1003;
+}
+#menu #mobile-menu .items a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
 }
 #menu-curtain {
     background: #0003;
@@ -1114,6 +1161,17 @@
 #menu.menu-color #mobile-menu a,
 #menu.menu-color #mobile-menu .title {
     color: #fff;
+}
+#menu.menu-color #desktop-menu .title {
+    color: #fff;
+}
+#menu.menu-color #desktop-menu a:hover,
+#menu.menu-color #desktop-menu .title:hover,
+#menu.menu-color #mobile-menu .items a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        0 12px 24px rgba(18, 28, 48, 0.18);
 }
 #preview {
     align-items: center;
