@@ -1224,7 +1224,7 @@
     flex-direction: column;
     gap: 24px;
     margin: 12px auto 0;
-    max-width: 780px;
+    max-width: 840px;
     width: 100%;
 }
 #links-snow-layer {
@@ -1249,8 +1249,8 @@
 }
 .links-grid {
     display: grid;
-    gap: 30px 34px;
-    grid-template-columns: repeat(3, minmax(215px, 230px));
+    gap: 34px 52px;
+    grid-template-columns: repeat(3, minmax(190px, 205px));
     justify-content: center;
 }
 .links-grid-compact {
@@ -1267,9 +1267,9 @@
     color: #22313a !important;
     display: flex;
     gap: 12px;
-    min-height: 108px;
+    min-height: 102px;
     overflow: hidden;
-    padding: 14px 16px;
+    padding: 13px 15px;
     transition: background 0.28s, border-color 0.28s, box-shadow 0.28s, transform 0.28s;
     width: 100%;
 }
@@ -1927,11 +1927,11 @@ ol li {
         padding-top: 40px;
     }
     .links-page {
-        max-width: 540px;
+        max-width: 500px;
     }
     .links-grid {
-        gap: 24px;
-        grid-template-columns: repeat(2, minmax(220px, 240px));
+        gap: 28px 34px;
+        grid-template-columns: repeat(2, minmax(190px, 210px));
     }
     .tag-related-card {
         grid-template-columns: 1fr;
